@@ -29,7 +29,7 @@ pipeline {
             steps {
                 echo 'Sonar Scanner'
                	//def scannerHome = tool 'SonarQube Scanner 3.0'
-			    withSonarQubeEnv(credentialsId: 'token1') {
+			    withSonarQubeEnv('sonarserver') {
 			    	sh label: '', script: 'mvn clean package sonar:sonar'
 			    }
             }
