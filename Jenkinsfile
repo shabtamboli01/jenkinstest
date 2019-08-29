@@ -22,7 +22,8 @@ pipeline {
         stage('JaCoCo') {
             steps {
                 echo 'Code Coverage'
-                jacoco()
+		jacoco buildOverBuild: true, changeBuildStatus: true
+               
             }
         }
         stage('Sonar') {
